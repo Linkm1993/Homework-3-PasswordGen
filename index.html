@@ -3,6 +3,7 @@
 
         <head>
             <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
             <link rel="stylesheet" href="styles.css">
             <title>Password Generator</title>
@@ -13,10 +14,28 @@
                 <h1 class="display-4">Password Generator</h1>
                 <p class="lead">Generates secure passwords</p>
                 <hr class="my-4">
-                <p class="p-border" id="display">It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                <p class="lead">
-                  <a class="btn btn-primary btn-lg" id="button" href="#" role="button">Generate Password</a>
-                </p>
+                <p class="p-border" id="display">Your password will be generated here!</p>
+                <form class="passwordForm">
+                    <label for="">Number of characters</label>
+                    <input type="range" min="8" max="25" id="slidebar" value="8">
+                    <input type="number" min="8" max="25" id="numberinput" value="8">
+
+                    <label for="">Inculde Uppercase Letters</label>
+                    <input type="checkbox" id="uppercase">
+
+                    <label for="">Include Lower Case</label>
+                    <input type="checkbox" id="lowercase">
+
+                    <label for="">Include Numbers</label>
+                    <input type="checkbox" id="numbers">
+
+                    <label for="">Include Special Characters</label>
+                    <input type="checkbox" id="specialchar">
+
+                    <p class="lead">
+                        <a class="btn btn-primary btn-lg" id="button" href="#" role="button">Generate Password</a>
+                      </p>
+                </form>
             </div>
             
 
