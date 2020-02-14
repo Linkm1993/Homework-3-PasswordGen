@@ -1,30 +1,31 @@
-let slidebar = document.getElementById('slidebar')
-let numberInput = document.getElementById('numberinput')
-let passwordForm = document.getElementById('passwordForm')
-let includeUppercase = document.getElementById("uppercase")
-let includeLowercase = document.getElementById("lowercase")
-let includeNumbers = document.getElementById("includeNumbers")
-let includeSymbols = document.getElementById("includeSymbols")
-let passDisplay = document.getElementById("display")
+//Defining characters for password
+let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWZYZ";
+let lowerCase = "abcdefghijklmnopqrstuvwxyz";
+let numbers = "1234567890";
+let symbols = "!@#$%^&*()_+";
 
+//Handlers for HTML elements
+let charNum = document.querySelector("#numberinput")
+let lowerBox = document.getElementById("lowercase")
+let numBox = document.getElementById("numbers")
+let symBox = document.getElementById("specialchar")
+let yourPw = document.getElementById("yourPw")
+let submitButton = document.getElementById("button")
 
+//Defines characters as the upperChase, modifies characters value based on which extra criteria are checked, changes the value of yourPW to the generated password
+submitButton.addEventListener("click",function(e){
+    let characters = upperCase;
+    (numBox.checked) ? characters += numbers : '';
+    (symBox.checked) ? characters += symbols : '';
+    (lowerBox.checked) ? characters += lowerCase : '';
+    yourPw.value = password(charNum.value, characters);
+});
 
-// Syncs the password length slide bar and number input
-numberinput.addEventListener('input', syncNumBar)
-slidebar.addEventListener('input', syncNumBar)
-
-passwordForm.addEventListener('submit', e => {
-    e.preventDefault()
-    let characterAmount = characterAmountNumber.value
-    let includeUppercase = includeUppercaseElement.checked
-    let includeNumbers = includeNumbersElement.checked
-    let includeSymbols = includeSymbolsElement.checked
-    let password = generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols)
-    passDisplay.innerText = password
-  })
-
-function syncNumBar(e) {
-    let value = e.target.value
-    slidebar.value = value
-    numberInput.value = value
+//For loop that itterates through the characters vaule the number of times defied
+function password(l,characters){
+		var pwd = '';
+    for(var i = 0; i<l; i++){
+    		pwd += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return pwd;
 }

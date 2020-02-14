@@ -1,6 +1,5 @@
 <!DOCTYPE html>
     <html lang="eng">
-
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,20 +13,24 @@
                 <h1 class="display-4">Password Generator</h1>
                 <p class="lead">Generates secure passwords</p>
                 <hr class="my-4">
-                <p class="p-border" id="display">Your password will be generated here!</p>
-                <form class="passwordForm">
-                    <label for="">Number of characters</label>
-                    <input type="range" min="8" max="25" id="slidebar" value="8">
-                    <input type="number" min="8" max="25" id="numberinput" value="8">
+                <p class="p-border" id="display">Your password will be generated here!:
+                    <input type="text" id="yourPw" size="80"/>
+                </p>
+                <form id="passwordForm">
+                    <label for="">Number of characters (Max 80) </label>
+                    <input type="number" min="8" max="80" id="numberinput" value="8">
 
-                    <label for="">Inculde Uppercase Letters</label>
-                    <input type="checkbox" id="uppercase">
+                    <br>
 
                     <label for="">Include Lower Case</label>
                     <input type="checkbox" id="lowercase">
 
+                    <br>
+
                     <label for="">Include Numbers</label>
                     <input type="checkbox" id="numbers">
+
+                    <br>
 
                     <label for="">Include Special Characters</label>
                     <input type="checkbox" id="specialchar">
@@ -37,30 +40,6 @@
                       </p>
                 </form>
             </div>
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
             <script src="script.js"></script>
